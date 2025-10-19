@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getCalApi } from "@calcom/embed-react"
 import './App.css'
+import Icon2Svg from './assets/ICON 2.svg'
 
 function App() {
   const [activeFilter, setActiveFilter] = useState('Full Stack')
@@ -233,22 +234,6 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-gray-900">Proof of Work</h2>
           
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
-            {['Full Stack', 'Adobe Express Add-Ons', 'Mobile Apps'].map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
-                  activeFilter === filter
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
 
           {/* Projects Grid */}
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
@@ -322,7 +307,7 @@ function App() {
             <div className="flex items-start">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mr-4 sm:mr-6 flex-shrink-0 overflow-hidden">
                 <img 
-                  src="/src/assets/ICON 2.svg" 
+                  src={Icon2Svg} 
                   alt="Mande Network Logo"
                   className="w-full h-full object-contain"
                 />
