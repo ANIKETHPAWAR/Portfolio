@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { getCalApi } from "@calcom/embed-react"
 import './App.css'
 import Icon2Svg from './assets/ICON 2.svg'
+import ProfileImage from './assets/image.png'
 
 function App() {
   const [activeFilter, setActiveFilter] = useState('Full Stack')
@@ -199,14 +200,15 @@ function App() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 rounded-full overflow-hidden">
             <img 
-              src="/src/assets/image.png" 
+              src={ProfileImage} 
               alt="Aniketh Pawar"
               className="w-full h-full object-cover"
             />
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-4">
-            Hey, I'm Aniketh Pawar
-          </h1>
+            </div>
+          
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-4">
+              Hey, I'm Aniketh Pawar
+            </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
           Final-year student at NIT Durgapur with 8 months of hands-on experience as a full-stack developer. I love building things that solve real problems. When I’m not coding, I’m usually brainstorming real-world challenges and finding ways to bring them to life with code.
           </p>
