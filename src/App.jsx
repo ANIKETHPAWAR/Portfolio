@@ -56,7 +56,7 @@ function App() {
       description: "SneakOut is a hyperlocal spot discovery web app designed to crowdsource and explore nearby hangout locations. Users can add custom spots, browse contributions from others, and search by category or proximity. The platform combines community input with intuitive mapping and location-based search to bring undiscovered local places to light.",
       technologies: ["React.js", "Javascript", "Node.js", "Leaflet.js", "Jwt", "Tailwind CSS"],
       category: "Full Stack",
-      website: "sneakout.me",
+      website: "https://sneakout.me",
       source: "https://github.com/ANIKETHPAWAR/SneakOut",
       icon: "🌏"
     },
@@ -76,7 +76,7 @@ function App() {
       description: "SangbadBangla is a dynamic Bengali news website built for a regional media company, delivering the latest news updates through integrated external APIs. The platform features live cricket scores and detailed scorecards for ongoing matches, enhancing user engagement and retention.An intuitive admin dashboard was developed to manage and publish articles efficiently, streamlining the editorial workflow and ensuring realtime content updates.",
       technologies: ["React.js", "JavaScript", "Node.js", "Express.js", "Auth0","Firebase", "Tailwind CSS", "Vercel","Render","API'S"],
       category: "Full Stack",
-      website: "sangbadbangla.news",
+      website: "https://sangbadbangla.news",
       source: "https://github.com/ANIKETHPAWAR/Sangbad-bangla",
       icon: "📰"
     }
