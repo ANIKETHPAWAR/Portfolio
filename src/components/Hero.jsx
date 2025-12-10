@@ -176,7 +176,7 @@ const Hero = () => {
                     border: '3px solid rgba(255,255,255,0.08)',
                   }}
                 >
-                  <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Currently</p>
+                  <p className="text-[10px] text-green-400 uppercase tracking-wider mb-1">Currently</p>
                   <p className="text-sm text-white font-medium">Learning & Building 🌍</p>
                 </motion.div>
 
