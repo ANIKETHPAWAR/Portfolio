@@ -1,43 +1,19 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { projects } from './Projects'
 
-const featuredProjects = [
-  {
-    id: 1,
-    title: "SneakOut",
-    description: "A hyperlocal spot discovery web app to crowdsource and explore nearby hangout locations.",
-    technologies: ["React", "Node.js", "Leaflet", "JWT"],
-    category: "Full Stack",
-    website: "https://sneakout.me",
-    icon: "🌏",
-    gradient: "from-emerald-500/20 to-cyan-500/20"
-  },
-  {
-    id: 2,
-    title: "SangbadBangla",
-    description: "Dynamic Bengali news website with live cricket scores and an intuitive admin dashboard.",
-    technologies: ["React", "Firebase", "Auth0", "Tailwind"],
-    category: "Full Stack",
-    website: "https://sangbadbangla.news",
-    icon: "📰",
-    gradient: "from-orange-500/20 to-red-500/20"
-  },
-  {
-    id: 3,
-    title: "Voting App",
-    description: "Election voting application with Aadhar authentication and real-time vote counting.",
-    technologies: ["Node.js", "Express", "MongoDB"],
-    category: "Backend",
-    website: "https://github.com/ANIKETHPAWAR/Voting-App",
-    icon: "🗳️",
-    gradient: "from-violet-500/20 to-purple-500/20"
-  }
-]
+// Get featured projects from the shared projects data
+const featuredProjects = projects.filter(p => p.featured)
 
 const ProjectCard = ({ project, index }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
+
+  // Debug: Log image URL
+  if (project.image) {
+    console.log(`Featured Project "${project.title}" image:`, project.image)
+  }
 
   return (
     <motion.a
@@ -49,15 +25,32 @@ const ProjectCard = ({ project, index }) => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ delay: index * 0.15, duration: 0.5 }}
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
-      className="group relative block"
+      className="group relative block overflow-hidden rounded-2xl"
     >
-      <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+      {/* Background Image */}
+      {project.image && (
+        <>
+          {/* Hidden img to preload and verify image loads */}
+          <img 
+            src={project.image}
+            alt=""
+            style={{ display: 'none' }}
+            onLoad={() => console.log(`✓ Image loaded for ${project.title}`)}
+            onError={() => console.error(`✗ Image failed to load for ${project.title}:`, project.image)}
+          />
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500 z-0"
+            style={{ backgroundImage: `url(${project.image})` }}
+          />
+        </>
+      )}
       
-      <div className="relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 h-full transition-all duration-300 group-hover:border-zinc-700">
+      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/70 to-zinc-900/65 group-hover:from-zinc-900/60 group-hover:to-zinc-900/55 transition-all duration-500 z-0" />
+      
+      <div className="relative bg-zinc-900/30 border border-zinc-800 rounded-2xl p-6 h-full transition-all duration-300 group-hover:border-zinc-700 backdrop-blur-sm z-10">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <span className="text-3xl">{project.icon}</span>
             <div>
               <h3 className="font-semibold text-lg text-white group-hover:text-indigo-400 transition-colors">
                 {project.title}
@@ -124,7 +117,7 @@ const FeaturedProjects = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {featuredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

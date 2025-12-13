@@ -1,5 +1,11 @@
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
+import routeImg from '../assets/Route-img.png'
+import Sb from '../assets/Sb.png'
+import sn from '../assets/sn.png'
+import v from '../assets/v.png'
+import bl from '../assets/Bl.png'
+import Ts from '../assets/Ts.png'
 
 const projects = [
   {
@@ -11,7 +17,7 @@ const projects = [
     category: "Full Stack",
     website: "https://sneakout.me",
     source: "https://github.com/ANIKETHPAWAR/SneakOut",
-    image: null, // Add image path here
+    image: sn, // Add image path from assets folder (e.g., '/src/assets/sneakout.png')
     featured: true,
   },
   {
@@ -23,7 +29,7 @@ const projects = [
     category: "Full Stack",
     website: "https://sangbadbangla.news",
     source: "https://github.com/ANIKETHPAWAR/Sangbad-bangla",
-    image: null,
+    image: Sb, // Add image path from assets folder (e.g., '/src/assets/sangbadbangla.png')
     featured: true,
   },
   {
@@ -35,8 +41,8 @@ const projects = [
     category: "Backend",
     website: "https://github.com/ANIKETHPAWAR/Voting-App",
     source: "https://github.com/ANIKETHPAWAR/Voting-App",
-    image: null,
-    featured: false,
+    image: v,
+    featured: true,
   },
   {
     id: 4,
@@ -49,14 +55,70 @@ const projects = [
     source: "https://github.com/ANIKETHPAWAR/Youtube-Extension-V1",
     image: null,
     featured: false,
+  },
+  {
+    id: 5,
+    title: "Routemate",
+    tagline: "Landing Page",
+    description: "A website to connect solo travelers across the world ",
+    technologies: ["JavaScript", "TailwindCss","ReactJs","Framer motion"],
+    category: "Frontend",
+    website: "https://route-mate-sage.vercel.app",
+    source: "https://github.com/ANIKETHPAWAR/RouteMate",
+    image: routeImg, // Route-mate screenshot
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Brainly",
+    tagline: "Resource vault",
+    description: "Build your personal knowledge hub — save tutorials, articles, and resources that matter, and let Brainly remind you before you forget.",
+    technologies: ["JavaScript", "TailwindCss","ReactJs","Framer motion","MongoDB"],
+    category: "Fullstack",
+    website: "https://brainly-alpha-nine.vercel.app/",
+    source: "https://github.com/ANIKETHPAWAR/Brainly",
+    image: bl, // Route-mate screenshot
+    featured: true,
+  },
+  {
+    id: 7,
+    title: "Notification-service",
+    tagline: "Backend-Service",
+    description: "Backend reference implementation for managing organizations, users, notification groups/topics, and per-user preference data. It exposes an HTTP API (Express + TypeScript) plus a decision endpoint that determines whether a notification is allowed on a specific channel.",
+    technologies: ["Typescript","ExpressJs","Node.js","Zod","OOP","Postman"],
+    category: "Backend",
+    website: "https://github.com/ANIKETHPAWAR/Dokaai-Assignment",
+    source: "https://github.com/ANIKETHPAWAR/Dokaai-Assignment",
+    image: null, // Route-mate screenshot
+    featured: false,
+  },
+  {
+    id: 8,
+    title: "Tea-station",
+    tagline: "Tea Cafe",
+    description: "Over one hundred flavours of specially crafted tea",
+    technologies: ["Html","Css","Javascript"],
+    category: "Frontend",
+    website: "https://tea-station-aniketh-pawar.netlify.app/",
+    source: "https://github.com/ANIKETHPAWAR/tea-station-website",
+    image: Ts, // Route-mate screenshot
+    featured: true,
   }
 ]
 
 const filters = ["All", "Full Stack", "Frontend", "Backend"]
 
+// Export projects for use in other components
+export { projects }
+
 const ProjectCard = ({ project, index, featured }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
+
+  // Debug: Log image URL
+  if (project.image) {
+    console.log(`Image for ${project.title}:`, project.image)
+  }
 
   if (featured) {
     return (
@@ -133,9 +195,16 @@ const ProjectCard = ({ project, index, featured }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="card p-5 group hover:bg-zinc-800/30 transition-colors"
+      className="card p-5 group hover:bg-zinc-800/30 transition-colors relative overflow-hidden"
     >
-      <div className="flex items-start justify-between mb-3">
+      {/* Background Image for non-featured cards */}
+      {project.image && (
+        <div 
+          className="project-card-image bg-cover bg-center"
+          style={{ backgroundImage: `url(${project.image})` }}
+        />
+      )}
+      <div className="relative z-10 flex items-start justify-between mb-3">
         <div>
           <h3 className="font-medium text-white text-sm">{project.title}</h3>
           <p className="text-xs text-zinc-500">{project.tagline}</p>
@@ -163,7 +232,7 @@ const ProjectCard = ({ project, index, featured }) => {
           </a>
         </div>
       </div>
-      <div className="flex flex-wrap gap-1.5">
+      <div className="relative z-10 flex flex-wrap gap-1.5">
         {project.technologies.slice(0, 3).map((tech) => (
           <span key={tech} className="text-[10px] px-2 py-0.5 rounded bg-zinc-800 text-zinc-500">
             {tech}
