@@ -7,6 +7,7 @@ const navItems = [
   { path: '/about', label: 'About' },
   { path: '/experience', label: 'Experience' },
   { path: '/projects', label: 'Projects' },
+  { path: '/garage', label: '🔧 Garage', highlight: true },
   { path: '/blog', label: 'Blog' },
   { path: '/contact', label: 'Contact' },
 ]
@@ -90,7 +91,9 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) => 
-                    `nav-link ${isActive ? 'active !text-white !bg-zinc-800' : ''}`
+                    `nav-link ${isActive ? 'active !text-white !bg-zinc-800' : ''} ${
+                      item.highlight && !isActive ? '!text-indigo-400 hover:!text-indigo-300' : ''
+                    }`
                   }
                 >
                   {item.label}
@@ -180,7 +183,9 @@ const Navbar = () => {
                             `block px-4 py-3 rounded-lg text-sm transition-colors ${
                               isActive 
                                 ? 'bg-zinc-800 text-white' 
-                                : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
+                                : item.highlight
+                                  ? 'text-indigo-400 hover:text-indigo-300 hover:bg-zinc-800/50'
+                                  : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
                             }`
                           }
                         >

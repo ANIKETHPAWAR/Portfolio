@@ -6,7 +6,8 @@ import {
   GitHubContributions,
   WhyHireMe,
   BlogPreview,
-  HomeCTA 
+  HomeCTA,
+  Garage
 } from '../components'
 
 const HomePage = () => {
@@ -26,6 +27,9 @@ const HomePage = () => {
       
       {/* GitHub Contributions - Activity chart */}
       <GitHubContributions />
+      
+      {/* Garage - Current projects and learning */}
+      <Garage />
       
       {/* Why Hire Me + Blog Preview - Two column layout */}
       <section className="py-24 px-6">

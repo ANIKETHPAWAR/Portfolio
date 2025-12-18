@@ -67,58 +67,8 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm text-zinc-400 mb-1.5">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="input"
-                  placeholder="Your name"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm text-zinc-400 mb-1.5">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="input"
-                  placeholder="you@example.com"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm text-zinc-400 mb-1.5">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="input resize-none"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
+        <div className="grid md:grid-cols-1 gap-12">
 
-              <button type="submit" className="btn-primary w-full justify-center">
-                Send Message
-              </button>
-            </form>
-          </motion.div>
 
           {/* Contact Info */}
           <motion.div
