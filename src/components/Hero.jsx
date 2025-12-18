@@ -113,7 +113,7 @@ const Hero = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://drive.google.com/file/d/184itooOFiMnLZmx7HVro6fwGqbpbhV5v/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1Ra2nKCzuggAC7HkwFXEGR3mGAyJTvasR/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all"

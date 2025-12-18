@@ -7,6 +7,7 @@ import {
   AboutPage,
   ExperiencePage,
   ProjectsPage,
+  GaragePage,
   BlogPage,
   BlogPostPage,
   ContactPage
@@ -59,6 +60,11 @@ function App() {
             <Route path="/projects" element={
               <PageWrapper>
                 <ProjectsPage />
+              </PageWrapper>
+            } />
+            <Route path="/garage" element={
+              <PageWrapper>
+                <GaragePage />
               </PageWrapper>
             } />
             <Route path="/blog" element={
