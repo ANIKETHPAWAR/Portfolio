@@ -6,6 +6,16 @@ const experiences = [
   {
     id: 1,
     role: 'Full Stack Developer',
+    company: 'Asan Innovators',
+    type: 'Internship',
+    duration: 'Feb 2026 - present',
+    description: 'Building the core product from ground up. Working across the entire stack to ship features fast while maintaining code quality.',
+    skills: ['React', 'Node.js', 'AWS', 'Google API', 'Nodemailer', 'JWT', 'TailwindCss', 'Figma'],
+    logo: 'https://imgs.search.brave.com/53d5NTgOwdT4vwH20W2maNb1_hs0YhAEs-NKsOBdxww/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbmM0/Mi5jb20vYXBpL2lt/YWdlLXByb3h5Lz91/cmw9aHR0cHM6Ly9z/dGF0aWMtYXNzZXQu/aW5jNDIuY29tL2xv/Z28vYXNhbi1pbm5v/dmF0b3JzLnBuZw',
+  },
+  {
+    id: 2,
+    role: 'Full Stack Developer',
     company: 'Stealth Startup',
     type: 'Full-time',
     duration: 'Aug 2025 - Oct 2025',
@@ -14,7 +24,7 @@ const experiences = [
     logo: 'stealth', // Custom stealth logo
   },
   {
-    id: 2,
+    id: 3,
     role: 'Frontend Developer',
     company: 'Mande Network',
     type: 'Internship',
@@ -31,28 +41,28 @@ const skills = [
   { name: "TypeScript", icon: "devicon-typescript-plain" },
   { name: "Python", icon: "devicon-python-plain" },
   { name: "C++", icon: "devicon-cplusplus-plain" },
-  
+
   // Frontend
   { name: "React", icon: "devicon-react-original" },
   { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain" },
   { name: "Figma", icon: "devicon-figma-plain" },
-  
+
   // Backend
   { name: "Node.js", icon: "devicon-nodejs-plain" },
   { name: "Express.js", icon: "devicon-express-original" },
-  
+
   // Databases
   { name: "MongoDB", icon: "devicon-mongodb-plain" },
   { name: "PostgreSQL", icon: "devicon-postgresql-plain" },
   { name: "MySQL", icon: "devicon-mysql-plain" },
   { name: "Redis", icon: "devicon-redis-plain" },
   { name: "Firebase", icon: "devicon-firebase-plain" },
-  
+
   // DevOps & Cloud
   { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark" },
   { name: "Docker", icon: "devicon-docker-plain" },
   { name: "Vercel", icon: "devicon-vercel-original" },
-  
+
   // Tools
   { name: "Git", icon: "devicon-git-plain" },
   { name: "Postman", icon: "devicon-postman-plain" },
@@ -65,14 +75,14 @@ const CustomIcon = ({ name }) => {
   if (name === "Cursor") {
     return (
       <svg className="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M5.5 3.21V20.8c0 .45.54.67.86.35l4.86-4.86h7.28c.45 0 .67-.54.35-.86L6.35 2.93c-.31-.32-.85-.1-.85.28z"/>
+        <path d="M5.5 3.21V20.8c0 .45.54.67.86.35l4.86-4.86h7.28c.45 0 .67-.54.35-.86L6.35 2.93c-.31-.32-.85-.1-.85.28z" />
       </svg>
     )
   }
   if (name === "Render") {
     return (
       <svg className="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
       </svg>
     )
   }
@@ -168,8 +178,8 @@ const Experience = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: { duration: 0.3 }
     }
@@ -222,10 +232,10 @@ const Experience = () => {
               <motion.div
                 key={skill.name}
                 variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.08, 
+                whileHover={{
+                  scale: 1.08,
                   y: -4,
-                  transition: { duration: 0.2 } 
+                  transition: { duration: 0.2 }
                 }}
                 className="flex flex-col items-center justify-center w-[72px] h-[72px] md:w-20 md:h-20
                            bg-zinc-900 border border-zinc-800 rounded-xl
