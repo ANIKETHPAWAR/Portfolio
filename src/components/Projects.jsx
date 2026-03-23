@@ -6,30 +6,31 @@ import sn from '../assets/sn.png'
 import v from '../assets/v.png'
 import bl from '../assets/Bl.png'
 import Ts from '../assets/Ts.png'
-
+import Tm from '../assets/Tm.png'
+import Hi from '../assets/HI.png'
 const projects = [
   {
     id: 1,
-    title: "SneakOut",
-    tagline: "Discover hidden gems in your city",
-    description: "A hyperlocal spot discovery platform where users crowdsource and explore nearby hangout locations. Search by category, proximity, or community ratings.",
-    technologies: ["React", "Node.js", "MongoDB", "Leaflet.js", "JWT"],
+    title: "Tmash Foods",
+    tagline: "Customized Ecommerce system built",
+    description: "Built and deployed a production-ready e-commerce platform for a US client with end-to-end order management, Zelle/CashApp checkout flow, Firebase Storage for payment proof uploads, and atomic order number generation via Firestore transactions. Engineered 6 Firebase Cloud Functions (Node.js) with server-side price validation, input sanitization, and 14 security vulnerability fixes including XSS prevention and Firestore default-deny rules. Developed a real-time Admin Dashboard with role-based access control (RBAC), payment verification workflows, product CRUD, and an automated transactional email system (Resend API) triggering 6 notifications across the full order lifecycle",
+    technologies: ["React", "Node.js", "Firebase", "Resend", "Vercel"],
     category: "Full Stack",
-    website: "https://sneakout.me",
-    source: "https://github.com/ANIKETHPAWAR/SneakOut",
-    image: sn, // Add image path from assets folder (e.g., '/src/assets/sneakout.png')
+    website: "https://tmashfoods.vercel.app/",
+    source: "https://github.com/ANIKETHPAWAR/Tmashfoods",
+    image: Tm, // Add image path from assets folder (e.g., '/src/assets/sneakout.png')
     featured: true,
   },
   {
     id: 2,
-    title: "SangbadBangla",
-    tagline: "Regional news platform",
-    description: "Dynamic Bengali news website serving thousands of readers with live cricket scores, breaking news, and an admin dashboard for content management.",
-    technologies: ["React", "Node.js", "Firebase", "Auth0"],
+    title: "Helix",
+    tagline: "Redesigned of website requested by real-estate client",
+    description: "Redesigned the website for a real-estate client from Hyderabad, improving user experience and visual appeal. The new design features a modern layout, intuitive navigation, and enhanced visuals to better showcase properties and attract potential buyers.",
+    technologies: ["React", "Node.js", "Excel", "Framer motion", "TailwindCss"],
     category: "Full Stack",
-    website: "https://sangbadbangla.news",
-    source: "https://github.com/ANIKETHPAWAR/Sangbad-bangla",
-    image: Sb, // Add image path from assets folder (e.g., '/src/assets/sangbadbangla.png')
+    website: "https://helix-redesign.vercel.app/",
+    source: "https://github.com/ANIKETHPAWAR/Helix-redesign",
+    image: Hi, // Add image path from assets folder (e.g., '/src/assets/sangbadbangla.png')
     featured: true,
   },
   {
@@ -61,7 +62,7 @@ const projects = [
     title: "Routemate",
     tagline: "Landing Page",
     description: "A website to connect solo travelers across the world ",
-    technologies: ["JavaScript", "TailwindCss","ReactJs","Framer motion"],
+    technologies: ["JavaScript", "TailwindCss", "ReactJs", "Framer motion"],
     category: "Frontend",
     website: "https://route-mate-sage.vercel.app",
     source: "https://github.com/ANIKETHPAWAR/RouteMate",
@@ -73,7 +74,7 @@ const projects = [
     title: "Brainly",
     tagline: "Resource vault",
     description: "Build your personal knowledge hub — save tutorials, articles, and resources that matter, and let Brainly remind you before you forget.",
-    technologies: ["JavaScript", "TailwindCss","ReactJs","Framer motion","MongoDB"],
+    technologies: ["JavaScript", "TailwindCss", "ReactJs", "Framer motion", "MongoDB"],
     category: "Fullstack",
     website: "https://brainly-alpha-nine.vercel.app/",
     source: "https://github.com/ANIKETHPAWAR/Brainly",
@@ -85,7 +86,7 @@ const projects = [
     title: "Notification-service",
     tagline: "Backend-Service",
     description: "Backend reference implementation for managing organizations, users, notification groups/topics, and per-user preference data. It exposes an HTTP API (Express + TypeScript) plus a decision endpoint that determines whether a notification is allowed on a specific channel.",
-    technologies: ["Typescript","ExpressJs","Node.js","Zod","OOP","Postman"],
+    technologies: ["Typescript", "ExpressJs", "Node.js", "Zod", "OOP", "Postman"],
     category: "Backend",
     website: "https://github.com/ANIKETHPAWAR/Dokaai-Assignment",
     source: "https://github.com/ANIKETHPAWAR/Dokaai-Assignment",
@@ -97,7 +98,7 @@ const projects = [
     title: "Tea-station",
     tagline: "Tea Cafe",
     description: "Over one hundred flavours of specially crafted tea",
-    technologies: ["Html","Css","Javascript"],
+    technologies: ["Html", "Css", "Javascript"],
     category: "Frontend",
     website: "https://tea-station-aniketh-pawar.netlify.app/",
     source: "https://github.com/ANIKETHPAWAR/tea-station-website",
@@ -131,7 +132,7 @@ const ProjectCard = ({ project, index, featured }) => {
       >
         {/* Background Image */}
         {project.image && (
-          <div 
+          <div
             className="project-card-image bg-cover bg-center"
             style={{ backgroundImage: `url(${project.image})` }}
           />
@@ -148,24 +149,24 @@ const ProjectCard = ({ project, index, featured }) => {
               <p className="text-sm text-zinc-500">{project.tagline}</p>
             </div>
             <div className="flex gap-2">
-              <a 
+              <a
                 href={project.website}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
-              <a 
+              <a
                 href={project.source}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
               </a>
             </div>
@@ -199,7 +200,7 @@ const ProjectCard = ({ project, index, featured }) => {
     >
       {/* Background Image for non-featured cards */}
       {project.image && (
-        <div 
+        <div
           className="project-card-image bg-cover bg-center"
           style={{ backgroundImage: `url(${project.image})` }}
         />
@@ -210,24 +211,24 @@ const ProjectCard = ({ project, index, featured }) => {
           <p className="text-xs text-zinc-500">{project.tagline}</p>
         </div>
         <div className="flex gap-1.5">
-          <a 
+          <a
             href={project.website}
             target="_blank"
             rel="noopener noreferrer"
             className="p-1.5 rounded text-zinc-500 hover:text-white transition-colors"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>
-          <a 
+          <a
             href={project.source}
             target="_blank"
             rel="noopener noreferrer"
             className="p-1.5 rounded text-zinc-500 hover:text-white transition-colors"
           >
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
           </a>
         </div>
@@ -249,7 +250,7 @@ const Projects = () => {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
 
   const featuredProjects = projects.filter(p => p.featured)
-  const otherProjects = activeFilter === 'All' 
+  const otherProjects = activeFilter === 'All'
     ? projects.filter(p => !p.featured)
     : projects.filter(p => !p.featured && p.category === activeFilter)
 
@@ -287,11 +288,10 @@ const Projects = () => {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`text-xs px-3 py-1.5 rounded-lg transition-all ${
-                  activeFilter === filter 
-                    ? 'bg-white text-black' 
-                    : 'bg-zinc-800 text-zinc-400 hover:text-white'
-                }`}
+                className={`text-xs px-3 py-1.5 rounded-lg transition-all ${activeFilter === filter
+                  ? 'bg-white text-black'
+                  : 'bg-zinc-800 text-zinc-400 hover:text-white'
+                  }`}
               >
                 {filter}
               </button>
@@ -309,7 +309,7 @@ const Projects = () => {
 
         {/* GitHub Link */}
         <div className="mt-12 text-center">
-          <a 
+          <a
             href="https://github.com/ANIKETHPAWAR"
             target="_blank"
             rel="noopener noreferrer"
@@ -317,7 +317,7 @@ const Projects = () => {
           >
             View all projects on GitHub
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
         </div>
